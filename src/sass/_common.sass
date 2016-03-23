@@ -1,0 +1,548 @@
+// fonts
++font(RalewayLight, RalewayLight)
++font(RalewayRegular, RalewayRegular)
++font(RalewayMedium, RalewayMedium)
++font(RalewayBold, RalewayBold)
+$default-fonts: Arial, sans-serif
+$raleway-l: RalewayLight, $default-fonts
+$raleway: RalewayRegular, $default-fonts
+$raleway-m: RalewayMedium, $default-fonts
+$raleway-b: RalewayBold, $default-fonts
+
+// colors
+$green: #1fa67a
+
+/*-------------------------------------------------------------------------*/
+/*----------------------------- MAIN STYLES -------------------------------*/
+/*-------------------------------------------------------------------------*/
+*
+	+selection
+		color: #fff
+		background-color: darken($green,20)
+a:hover, a:focus
+	text-decoration: none
+a
+	color: inherit
+svg
+	width: 100%
+	height: 100%
+	vertical-align: middle
+#loader-wrapper
+	position: fixed
+	top: 0
+	width: 100%
+	height: 100%
+	background: #000
+	z-index: 1000
+.loader__in
+	position: relative
+	left: 50%
+	top: 50%
+	width: 150px
+	height: 150px
+	margin: -75px 0 0 -75px
+	border-radius: 50%
+	border: 3px solid transparent
+	border-top-color: $green
+	animation: spin 2s linear infinite
+	&:before
+		content: ""
+		position: absolute
+		top: 5px
+		left: 5px
+		right: 5px
+		bottom: 5px
+		border-radius: 50%
+		border: 3px solid transparent
+		border-top-color: #fff
+		animation: spin 3s linear infinite
+	&:after
+		content: ""
+		position: absolute
+		top: 15px
+		left: 15px
+		right: 15px
+		bottom: 15px
+		border-radius: 50%
+		border: 3px solid transparent
+		border-top-color: $green
+		animation: spin 1.5s linear infinite
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+body
+	min-width: 320px
+	font-family: $raleway
+	font-size: 14px
+	line-height: 1.42857
+	letter-spacing: 0.02em
+/* fullPage styles */
+#fp-nav
+	&.right
+		right: 7px
+		+r(1400)
+			top: 20px
+			right: 20px
+	a
+		opacity: 0.5
+		+pie-clearfix
+		&.active
+			opacity: 1
+	.fp-tooltip-custom
+		float: right
+		margin-right: 15px
+		padding: 2px 7px
+		font-family: $raleway-m
+		color: #fff
+		line-height: 1
+		letter-spacing: 1px
+		white-space: nowrap
+		border-radius: 5px
+		background-color: rgba(0,0,0,0.7)
+#fp-nav ul li, .fp-slidesNav ul li
+	margin: 5px
+	width: auto
+	height: auto
+#fp-nav ul li a span, .fp-slidesNav ul li a span
+	right: 3px
+	margin-top: -1px
+	left: auto
+	margin-left: 0
+	background-color: #fff
+	box-shadow: 0 0 0 1px rgba(0,0,0,0.2)
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span
+	right: 0
+	margin-top: -5px
+	margin-left: 0
+	width: 10px
+	height: 10px
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span
+	right: 0
+/*-------------------------------------------------------------------------*/
+/*----------------------------- Main Page ---------------------------------*/
+/*-------------------------------------------------------------------------*/
+#fullpage
+	.section
+		z-index: 1
+		background-color: #000
+		+ .section
+			background-color: $green
+			+ .section
+				background-color: #e9f0f5
+				+ .section
+					background-color: $green
+#about
+	#canvas
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+	.works
+		position: relative
+		z-index: 1
+/* Main Slider */
+.slider-main
+	width: 100%
+	height: 100%
+	table-layout: fixed
+	.slick-list
+		height: 100%
+	.slick-track
+		height: 100%
+	&__in
+		overflow: hidden
+		position: relative
+		height: 100%
+		&.slick-active
+			.slider-main__inner
+				display: block
+		.cover-img
+			opacity: 0.3
+	&__inner
+		display: none
+		width: 100%
+		height: 100%
+		text-align: center
+		+vertical
+		white-space: normal
+	&__text
+		display: inline-block
+		position: relative
+		top: 60px
+		margin-left: auto
+		margin-right: auto
+		width: 50%
+		color: #fff
+		p:nth-child(2n+1)
+			display: inline-block
+			margin-top: 50px
+			padding: 2px 7px
+			font-family: $raleway-m
+			font-size: 28px
+			line-height: 1
+			border-left: 4px solid $green
+			background-color: rgba(255,255,255,0.1)
+		p:nth-child(2n)
+			margin-top: 10px
+			font-family: $raleway
+			font-size: 18px
+			font-weight: normal
+			line-height: 1.2
+		+ .slider-main__text
+			margin-top: 30px
+	.slick-dots
+		bottom: 10px
+		li
+			margin: 0 5px
+			padding: 0
+		button
+			width: 8px
+			height: 8px
+/* Section Styles */
+.js-inview
+	visibility: hidden
+	&.animated
+		visibility: visible
+.section
+	&__title
+		overflow: hidden
+		position: absolute
+		z-index: 5
+		top: 30px
+		left: 0
+		right: 0
+		color: #fff
+		text-align: center
+		text-transform: uppercase
+		white-space: nowrap
+		font-weight: normal
+		h2
+			font-family: $raleway-m
+			font-size: 24px
+			font-weight: normal
+			letter-spacing: 1px
+		h3
+			display: inline-block
+			margin-top: 15px
+			font-size: 12px
+			letter-spacing: 4px
+			font-weight: normal
+			&:after
+				content: ""
+				display: block
+				margin: 20px auto 0
+				width: 70%
+				height: 1px
+				background-color: #fff
+				transform: scale(0,1)
+				transition: 2s
+			&.animated
+				&:after
+					transform: scale(1,1)
+					transition: 2s
+.portfolio-wrap
+	margin: 0 auto
+	margin-top: 75px
+	padding: 25px 20px
+	max-width: 1170px
+.portfolio
+	margin-left: -2%
+	+pie-clearfix
+	li
+		float: left
+		margin-top: 2%
+		margin-left: 2%
+		width: 23%
+		height: 200px
+		box-shadow: 0 0 5px rgba(0,0,0,0.7)
+	&__in
+		overflow: hidden
+		position: relative
+		width: 100%
+		height: 100%
+		background-color: #fff
+		border: 2px solid #fff
+		border-radius: 3px
+		img
+			max-width: 100%
+			max-height: 100%
+		&:hover
+			.portfolio__mask
+				top: 0
+				border-top-color: transparent
+				transition: all 0.4s
+	&__mask
+		position: absolute
+		top: 80%
+		bottom: 0
+		left: 0
+		right: 0
+		text-align: center
+		background-color: rgba(0,0,0,.9)
+		border-top: 2px solid $green
+		box-shadow: 0 0 15px 5px rgba(0,0,0,.9)
+		transition: all 0.3s
+		&-in
+			transition: all 0.5s
+			h4
+				padding-top: 15px
+				font-family: $raleway-l
+				font-size: 12px
+				color: #fff
+				text-transform: uppercase
+				letter-spacing: 3px
+			p
+				margin-top: 20px
+				color: #aaa
+			a
+				overflow: hidden
+				position: relative
+				z-index: 0
+				display: block
+				margin: 0 auto
+				margin-top: 20px
+				padding: 7px 0
+				width: 50%
+				font-family: $raleway-m
+				color: $green
+				line-height: 1
+				text-decoration: none
+				border: 1px solid $green
+				transition: all 0.3s
+				&:after
+					content: ''
+					position: absolute
+					z-index: -1
+					height: 0
+					width: 101%
+					top: 50%
+					left: 50%
+					background-color: $green
+					opacity: 0
+					transform: translateX(-50%) translateY(-50%)
+					transition: all 0.3s
+				&:hover
+					color: #000
+					&:after
+						height: 100%
+						opacity: 1	
+				&:active
+					&:after
+						height: 130%
+						opacity: 1
+				+ a
+					color: #bbb
+					border-color: #bbb
+					&:after
+						background-color: #fff
+.about
+	font-size: 16px
+	color: #575757
+	.section__title
+		color: #575757
+		h3:after
+			background-color: #575757
+	&-wrap
+		position: relative
+		z-index: 1
+		margin: 0 auto
+		padding: 0 20px
+		max-width: 1170px
+		+vertical
+		white-space: normal
+	&__in
+		display: inline-block
+		margin-left: -4px
+		width: 50%
+	&-name
+		font-family: $raleway-m
+		font-size: 32px
+		line-height: 1.2
+	&-spec
+		font-family: $raleway
+		font-size: 32px
+		span
+			font-family: $raleway-b
+	&-desc
+		font-size: 20px
+		line-height: 1.2
+	&-info
+		margin-top: 10px
+	&-day
+		margin-top: 10px
+	&-skills
+		margin-top: 10px
+		font-family: $raleway-m
+		&__list
+			padding-left: 30px
+			li
+				list-style-type: disc
+	&__signature
+		display: inline-block
+		width: 49%
+		vertical-align: top
+#signature
+	path
+		fill: none
+		stroke: #ACACAC
+		stroke-width: 7
+		stroke-linecap: round
+		stroke-linejoin: round
+		stroke-miterlimit: 10
+	path:nth-child(7), path:nth-child(8)
+		stroke: $green
+.contacts
+	margin: 0 auto
+	padding: 0 15px
+	max-width: 1170px
+	+pie-clearfix
+	&-col
+		float: left
+		width: 50%
+		vertical-align: middle
+	&__list
+		margin-top: 100px
+		li
+			padding-right: 100px
+			+pie-clearfix
+			+ li
+				margin-top: 25px
+		.icomoon
+			display: inline-block
+			width: 50px
+			font-size: 24px
+			color: #fff
+			text-align: center
+			vertical-align: -2px
+		p
+			float: left
+			font-family: $raleway-l
+			font-size: 18px
+			color: #fff
+			letter-spacing: 2px
+			+ .icomoon
+				margin-top: 25px
+			span:first-child
+				margin-right: 5px
+				font-family: $raleway-m
+			a
+				text-decoration: none
+				&:hover
+					text-decoration: underline
+		.clipboard-btn
+			float: right
+			width: 26px
+			height: 26px
+.contacts-form
+	.field
+		position: relative
+		+pie-clearfix
+		+ .field
+			margin-top: 15px
+	.form-group
+		font-family: $raleway-l
+		font-size: 18px
+		color: #fff
+		letter-spacing: 1px
+		.star-el
+			display: inline-block
+			font-size: 30px
+			line-height: 1
+			vertical-align: -7px
+		.form-error
+			position: absolute
+			left: 0
+			bottom: 0
+			display: inline-block
+			padding: 0 5px
+			font-size: 14px
+			color: #fff
+			background-color: rgba(0,0,0,0.3)
+			animation-name: animateFadeIn
+			animation-duration: 1s
+	.form-input
+		position: relative
+		z-index: 1
+		padding: 0 10px
+		width: 100%
+		height: 35px
+		font-family: $raleway
+		font-size: 14px
+		color: #222
+		letter-spacing: 1.5px
+		line-height: 35px
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
+		+placeholder-color($green)
+		transition: all 0.3s
+		&:focus
+			box-shadow: 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)
+			transition: all 0.3s
+		&.error
+			margin-bottom: 35px
+			transition: all 0.3s
+	.form-area
+		position: relative
+		z-index: 1
+		padding: 5px 10px
+		width: 100%
+		height: 150px
+		font-family: $raleway
+		font-size: 14px
+		color: #222
+		letter-spacing: 1.5px
+		vertical-align: middle
+		resize: none
+		border: none
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
+		+placeholder-color($green)
+		transition: all 0.3s
+		&:focus
+			box-shadow: 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)
+			transition: all 0.3s
+		&.error
+			margin-bottom: 35px
+			transition: all 0.3s
+	.submit-btn
+		float: right
+		margin-top: 5px
+		padding: 0 10px
+		font-size: 20px
+		color: $green
+		line-height: 35px
+		background-color: #fff
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
+		transition: all 0.3s
+		&:hover
+			box-shadow: 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)
+			transition: all 0.3s
+.form-loading
+	display: none
+	float: left
+	margin-top: 5px
+	font-size: 18px
+	color: #fff
+	line-height: 35px
+.form-success
+	display: none
+	margin-top: 100px
+	font-size: 18px
+	color: #fff
+	text-align: center
+.form-new
+	display: none
+	margin-top: 25px
+	.btn-new
+		width: 100%
+		font-size: 20px
+		color: $green
+		line-height: 35px
+		background-color: #fff
+		text-align: center
+		&:hover
+			box-shadow: 0 0 5px 1px rgba(0,0,0,0.5)
+/* Fancybox style */
+.fancybox-wrap, .fancybox-wrap *
+	box-sizing: content-box
