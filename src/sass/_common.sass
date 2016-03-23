@@ -81,12 +81,13 @@ body
 /* fullPage styles */
 #fp-nav
 	&.right
+		margin-top: -60px
 		right: 7px
 		+r(1400)
 			top: 20px
 			right: 20px
 	a
-		opacity: 0.5
+		opacity: 0.4
 		+pie-clearfix
 		&.active
 			opacity: 1
@@ -94,15 +95,16 @@ body
 		float: right
 		margin-right: 15px
 		padding: 2px 7px
-		font-family: $raleway-m
-		color: #fff
+		font-family: $raleway-b
+		color: rgba(0, 0, 0, 0.87)
 		line-height: 1
 		letter-spacing: 1px
 		white-space: nowrap
 		border-radius: 5px
-		background-color: rgba(0,0,0,0.7)
+		background-color: #fff
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
 #fp-nav ul li, .fp-slidesNav ul li
-	margin: 5px
+	margin: 15px 5px
 	width: auto
 	height: auto
 #fp-nav ul li a span, .fp-slidesNav ul li a span
@@ -111,7 +113,7 @@ body
 	left: auto
 	margin-left: 0
 	background-color: #fff
-	box-shadow: 0 0 0 1px rgba(0,0,0,0.2)
+	box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
 #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span
 	right: 0
 	margin-top: -5px
@@ -257,7 +259,7 @@ body
 		margin-left: 2%
 		width: 23%
 		height: 200px
-		box-shadow: 0 0 5px rgba(0,0,0,0.7)
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
 	&__in
 		overflow: hidden
 		position: relative
@@ -541,8 +543,9 @@ body
 		line-height: 35px
 		background-color: #fff
 		text-align: center
+		box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
 		&:hover
-			box-shadow: 0 0 5px 1px rgba(0,0,0,0.5)
+			box-shadow: 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)
 /* Fancybox style */
 .fancybox-wrap, .fancybox-wrap *
 	box-sizing: content-box
