@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="css/lib/jquery.fullPage.css">
 	<link rel="stylesheet" href="css/lib/jquery.cover.css">
 	<link rel="stylesheet" href="css/lib/animate.css">
-	<link rel="stylesheet" href="css/lib/style.css">
 	<link rel="stylesheet" href="css/lib/jquery.fancybox.css">
 	<link rel="stylesheet" href="css/screen.css">
 </head>
@@ -89,7 +88,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Корпоративный сайт</h4>
 									<p>UKAM</p>
-									<a href="img/content/ukam.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/ukam.jpg" class="portfolio-fancybox" title="Корпоративный сайт">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -102,7 +101,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Блог</h4>
 									<p>Cards</p>
-									<a href="img/content/cards.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/cards.jpg" class="portfolio-fancybox" title="Блог">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -115,7 +114,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Landing Page</h4>
 									<p>MTITM</p>
-									<a href="img/content/mtitm.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/mtitm.jpg" class="portfolio-fancybox" title="Landing Page">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -128,7 +127,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Сайт футбольных ставок</h4>
 									<p>Mikost</p>
-									<a href="img/content/mikost.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/mikost.jpg" class="portfolio-fancybox" title="Сайт футбольных ставок">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -141,7 +140,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Интернет-магазин</h4>
 									<p>Fashion Press</p>
-									<a href="img/content/fashion_press.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/fashion_press.jpg" class="portfolio-fancybox" title="Интернет-магазин">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -154,7 +153,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Landing Page</h4>
 									<p>Bootstrap</p>
-									<a href="img/content/bootstrap_page.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/bootstrap_page.jpg" class="portfolio-fancybox" title="Landing Page">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -167,7 +166,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Landing Page</h4>
 									<p>Frebdm</p>
-									<a href="img/content/frebdm.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/frebdm.jpg" class="portfolio-fancybox" title="Landing Page">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -180,7 +179,7 @@
 								<div class="portfolio__mask-in">
 									<h4>Landing Page</h4>
 									<p>Remote Workers</p>
-									<a href="img/content/remote_workers.jpg" class="portfolio-fancybox">Увеличить</a>
+									<a data-fancybox-group="portfolio" href="img/content/remote_workers.jpg" class="portfolio-fancybox" title="Landing Page">Увеличить</a>
 									<a href="#">Подробнее</a>
 								</div>
 							</div>
@@ -217,13 +216,14 @@
 							<li>Bootstrap</li>
 							<li>WordPress</li>
 							<li>Gulp</li>
+							<li>Bower</li>
 							<li>Git</li>
 						</ul>
 					</div>
 				</div><!-- end about__in -->
 				<!-- begin about__signature  -->
 				<div class="about__signature">
-					<svg class="svg-inview" version="1.1" id="signature" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 100">
+					<svg class="svg-inview" id="signature" viewbox="0 0 500 100">
 						<path data-svg-speed="700" data-svg-delay="500" d="M100.8,22.7c3.9,16.2,7.7,32.4,11.6,48.6
 							c9-10.5,16.1-22.5,21-35.3c2.3,12.1,6.6,23.8,12.5,34.6c9.5-15.1,16-32.1,18.9-49.7"/>
 						<path data-svg-speed="600" data-svg-delay="1200" d="M198.5,43.3c1.3-2.3,0.4-5.5-1.7-7.1s-5-1.9-7.6-1.2
@@ -265,16 +265,16 @@
 				<div class="contacts-col">
 					<ul class="contacts__list">
 						<li class="js-inview fadeInLeft delay0_5">
-							<p><i class="icomoon icon-skype"></i><span>Skype:</span> <span id="skype_link">iseeyouwatching</span></p>
-							<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#skype_link"><i class="icon"></i></button>
+							<button class="clipboard-btn tooltip tooltip-fade" data-clipboard-action="copy" data-clipboard-target="#skype_link" data-title="copy"><svg class="icon icon-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-copy"></use></svg></button>
+							<p><svg class="icon icon-skype"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-skype"></use></svg><span>Skype:</span> <span id="skype_link">iseeyouwatching</span></p>
 						</li>
 						<li class="js-inview fadeInLeft delay1">
-							<p><i class="icomoon icon-envelope"></i><span>E-mail:</span> <a href="mailto:host.sf@gmail.com" id="email_link">host.sf@gmail.com</a></p>
-							<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#email_link"><i class="icon"></i></button>
+							<button class="clipboard-btn tooltip tooltip-fade" data-clipboard-action="copy" data-clipboard-target="#email_link" data-title="copy"><svg class="icon icon-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-copy"></use></svg></button>
+							<p><svg class="icon icon-email"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-email"></use></svg><span>E-mail:</span> <a href="mailto:host.sf@gmail.com" id="email_link">host.sf@gmail.com</a></p>
 						</li>
 						<li class="js-inview fadeInLeft delay1_5">
-							<p><i class="icomoon icon-github"></i><span>GitHub:</span> <a href="https://github.com/Watch1k" target="_blank" id="github_link">https://github.com/Watch1k</a></p>
-							<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#github_link"><i class="icon"></i></button>
+							<button class="clipboard-btn tooltip tooltip-fade" data-clipboard-action="copy" data-clipboard-target="#github_link" data-title="copy"><svg class="icon icon-copy"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-copy"></use></svg></button>
+							<p><svg class="icon icon-github"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/icons.svg#icon-github"></use></svg><span>GitHub:</span> <a href="https://github.com/Watch1k" target="_blank" id="github_link">https://github.com/Watch1k</a></p>
 						</li>
 					</ul>
 				</div><!-- end contacts-col -->
@@ -297,7 +297,7 @@
 							<!-- begin field  -->
 							<div class="field js-inview fadeInRight delay1_5">
 								<label class="form-group"><span class="star-el">*</span> Ваше сообщение
-									<textarea type="text" name="user_message" class="form-area" placeholder="Ваше сообщение" data-validation="required" data-validation-error-msg="Вы не ввели сообщение"></textarea>
+									<textarea name="user_message" class="form-area" placeholder="Ваше сообщение" data-validation="required" data-validation-error-msg="Вы не ввели сообщение"></textarea>
 								</label>
 							</div>
 							<!-- begin field  -->
