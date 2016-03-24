@@ -1307,7 +1307,7 @@
 			}
 
 			if (isString(captionText) && $.trim(captionText) !== '') {
-				current.caption.wrap = $('<div class="fancybox-title fancybox-title-' + captionType + '-wrap">' + captionText + '</div>').appendTo( current[ captionType === 'over' ? 'inner' : 'wrap' ] );
+				current.caption.wrap = $('<div class="fancybox-title fancybox-title-' + captionType + '-wrap"><p>' + captionText + '</p></div>').prependTo( current[ captionType === 'over' ? 'inner' : 'wrap' ] );
 
 				if (captionType === 'float') {
 					current.caption.wrap.width( F.getViewport().w - (F.wrap.outerWidth(true)  - F.inner.width() ) ).wrapInner('<div></div>');

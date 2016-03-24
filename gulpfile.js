@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     gutil = require('gulp-util'),
     notify = require("gulp-notify"),
+    html5Lint = require('gulp-html5-lint'),
     reload = browserSync.reload;
 
 // IE 8 opacity
@@ -110,7 +111,7 @@ gulp.task('sprite', function() {
     spriteData.img
         .pipe(gulp.dest(dest.img));
     spriteData.css
-        .pipe(gulp.dest(src.sass));
+        .pipe(gulp.dest(src.sass + '/lib'));
 });
 
 // svg sprite
@@ -138,9 +139,9 @@ gulp.task('svg-sprite', function () {
 gulp.task('html', function() {
     gulp.src('src/*.html')
         .pipe(rigger())
-        .pipe(htmlhint())
-        .pipe(htmlhint.reporter())
-        .pipe(gulp.dest('build/'))
+        .pipe(html5Lint())
+        .on("error", notify.onError(function (error) {return error.message;}))
+        .pipe(gulp.dest('build'))
         .pipe(reload({
             stream: true
         }));
@@ -204,7 +205,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
     gulp.watch('src/jade/**/*.jade', ['jade']);
     gulp.watch(src.sass + '/**/*', ['sass']);
-    gulp.watch('src/js/*.js', ['js']);
+    gulp.watch('src/js/**/*', ['js']);
     gulp.watch('src/js/*.coffee', ['coffee']);
     gulp.watch('src/img/*', ['sprite', 'copy']);
     gulp.watch('src/img/svg/*', ['svg-sprite']);

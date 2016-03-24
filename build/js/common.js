@@ -19,7 +19,9 @@ head.ready(function(){
 		locales: {
 			'ru': {
 				CLOSE: 'закрыть',
-				EXPAND: 'показать в полном размере'
+				EXPAND: 'показать в полном размере',
+				NEXT: 'следующий',
+				PREV: 'предыдущий'
 			}
 		},
 		afterShow: function(){
